@@ -4,20 +4,51 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><?=ucfirst($URL[0])?> - HG</title>
-	<link rel="stylesheet" type="text/css" href="<?=ROOT?>/assets/css/style.css?67">
+	<link rel="stylesheet" type="text/css" href="<?=ROOT?>/assets/css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="<?=ROOT?>/assets/lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="<?=ROOT?>/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="<?=ROOT?>/assets/css/style_plus.css" rel="stylesheet">
+
+  <!-- Use to style song-full --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-	<header>
+	<header style="background-color:orange; position: fixed; width: 100%; top: 0px;">
 		<div class="logo-holder">
-			<a href="<?=ROOT?>" style="height: 100%;"><img class="logo" src="<?=ROOT?>/assets/images/logo.jpg"></a>		
+			<a href="<?=ROOT?>" style="height: 100%;"><img style="height: 100%;" class="logo" src="<?=ROOT?>/assets/images/logo.jpg"></a>		
 		</div>
 		<div class="header-div" >
 			<div class="main-title">
-				HG
+				HGMusic
 				<div class="socials">
+					<a href="https://www.facebook.com/profile.php?id=61558708141906" target="_blank">
 					<svg  width="25" height="25" fill="blue" class="bi bi-facebook" viewBox="0 0 16 16">
 					  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
 					</svg>
+					</a>
 					<svg  width="25" height="25" fill="blue" class="bi bi-tiktok" viewBox="0 0 16 16">
 					  <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
 					</svg>
@@ -32,27 +63,108 @@
 
 				<div class="nav-item dropdown">
 					<a href="#">Thể loại</a>
-					<div class="dropdown-list hide">
-						<div class="nav-item">Country</div>
-						<div class="nav-item">Pop</div>
-						<div class="nav-item">R&B</div>
+
+
+
+					<div class="dropdown-list" style="height: 400px; width: 650px;">
+						<div class="category-list">
+							<?php
+								$query = "SELECT categories.id, categories.category FROM categories INNER JOIN areas ON areas.id = categories.area_id WHERE areas.id = 3";
+								$categories = db_query($query);
+							?>
+							<ul>
+							    <h4>Nhạc Việt</h4>
+							    <?php if (!empty($categories)): ?>
+							        <?php foreach ($categories as $cat): ?>
+							            <li class="nav-item"><a href="<?= ROOT ?>/category/<?= $cat['id'] ?>"><?= htmlspecialchars($cat['category'], ENT_QUOTES, 'UTF-8') ?></a></li>
+							        <?php endforeach; ?>
+							    <?php else: ?>
+							        <li class="nav-item">Không có danh mục nào</li>
+							    <?php endif; ?>
+							</ul>	
+							
+							<?php
+								$query = "SELECT categories.id, categories.category FROM categories INNER JOIN areas ON areas.id = categories.area_id WHERE areas.id = 1";
+								$categories = db_query($query);
+							?>
+							<ul>
+							    <h4>Châu Á</h4>
+							    <?php if (!empty($categories)): ?>
+							        <?php foreach ($categories as $cat): ?>
+							            <li class="nav-item"><a href="<?= ROOT ?>/category/<?= $cat['id'] ?>"><?= htmlspecialchars($cat['category'], ENT_QUOTES, 'UTF-8') ?></a></li>
+							        <?php endforeach; ?>
+							    <?php else: ?>
+							        <li class="nav-item">Không có danh mục nào</li>
+							    <?php endif; ?>
+							</ul>	
+
+							<?php
+								$query = "SELECT categories.id, categories.category FROM categories INNER JOIN areas ON areas.id = categories.area_id WHERE areas.id = 2";
+								$categories = db_query($query);
+							?>
+							<ul>
+							    <h4>Âu Mĩ</h4>
+							    <?php if (!empty($categories)): ?>
+							        <?php foreach ($categories as $cat): ?>
+							            <li class="nav-item"><a href="<?= ROOT ?>/category/<?= $cat['id'] ?>"><?= htmlspecialchars($cat['category'], ENT_QUOTES, 'UTF-8') ?></a></li>
+							        <?php endforeach; ?>
+							    <?php else: ?>
+							        <li class="nav-item">Không có danh mục nào</li>
+							    <?php endif; ?>
+							</ul>	
+
+							<?php
+								$query = "SELECT categories.id, categories.category FROM categories INNER JOIN areas ON areas.id = categories.area_id WHERE areas.id = 4";
+								$categories = db_query($query);
+							?>
+							<ul>
+							    <h4>Khác</h4>
+							    <?php if (!empty($categories)): ?>
+							        <?php foreach ($categories as $cat): ?>
+							            <li class="nav-item"><a href="<?= ROOT ?>/category/<?= $cat['id'] ?>"><?= htmlspecialchars($cat['category'], ENT_QUOTES, 'UTF-8') ?></a></li>
+							        <?php endforeach; ?>
+							    <?php else: ?>
+							        <li class="nav-item">Không có danh mục nào</li>
+							    <?php endif; ?>
+							</ul>	
+						</div>
 					</div>
 				</div>
 
-				<div class="nav-item"><a href="<?=ROOT?>/artist">Nghệ sĩ</a></div>
+
+				<div class="nav-item"><a href="<?=ROOT?>/artists">Nghệ sĩ</a></div>
 				<div class="nav-item"><a href="<?=ROOT?>/about">Khám phá</a></div>
 				<div class="nav-item"><a href="<?=ROOT?>/contact">Tương tác</a></div>
 
-				<?php if(logged_in()):?>
-				<div class="nav-item dropdown">
-					<a href="#">Hi, <?=user('username')?></a>
-					<div class="dropdown-list ">
-						<div class="nav-item"><a href="<?=ROOT?>/profile">Profile</a></div>
-						<div class="nav-item"><a href="<?=ROOT?>/admin">Admin</a></div>
-						<div class="nav-item"><a href="<?=ROOT?>/logout">Logout</a></div>
-					</div>
+				<div class="footer-div" style="min-width: 600px;">
+					<form action="<?=ROOT?>/search">
+						<div class="form-group">
+							<input class="form-control" type="text" placeholder="Tìm kiếm bài hát" name="find">
+							<button class="btn btn-secondary">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18">
+								    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+								</svg>
+							</button>
+						</div>
+					</form>
 				</div>
-			<?php endif;?>
+
+				<?php if(logged_in()):?>
+					<div class="nav-item dropdown" style="margin-left: auto; margin-right: 5%;">
+						<a href="#">Hi, <?=user('username')?></a>
+						<div class="dropdown-list ">
+							<div class="nav-item"><a href="<?=ROOT?>/admin/users/edit/<?=user('id')?>">Profile</a></div>
+							<div class="nav-item"><a href="<?=ROOT?>/admin">Admin</a></div>
+							<div class="nav-item"><a href="<?=ROOT?>/logout">Đăng xuất</a></div>
+						</div>
+					</div>
+				<?php elseif(!logged_in()):?>
+					<div class="btn-group" style="margin-left: auto;">
+						<button type="button" class="btn btn-dark"><a href="<?=ROOT?>/login">Đăng nhập</a> </button>
+  						<button type="button" class="btn btn-dark"><a href="<?=ROOT?>/signup">Đăng ký</a> </button>
+					</div>
+				<?php endif;?>
+
 			</div>
 		</div>
 	</header>

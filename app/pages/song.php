@@ -2,7 +2,7 @@
 
 	<center> <div class="section-title">Đang phát</div> </center>
 
-	<section class="content">
+	<section class="container d-flex" style="height: 67%; margin-top: 6%; margin-bottom: 4%; justify-content: space-between;">
 
 		<?php
 
@@ -14,8 +14,6 @@
 		<?php if(!empty($row)):?>
 				<?php include page('song-full')?>
 		<?php endif;?>
-
-	
 
 	</section>
 

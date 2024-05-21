@@ -4,19 +4,40 @@
 
 }
 
+
+:root{
+	--up_arrow_color: #fff;
+	--up_arrow_shadow: 0px, 0px, 10px, white;
+
+	--down_arrow_color: #ffffff49;
+	--down_arrow_shadow: 0px, 0px, 0px rgb(255, 255, 255, 0);
+
+}
+
+
+
 *{
 	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	
 }
 
 body img {
 	width: 100%;
 }
 
+html {
+	height: 100%;
+}
+
 body{
-	min-width: 350px;
-	font-family: lato, sans-serif, tahoma;
 	margin: 0px;
+	min-width: 350px;
+	height: 100%;
+	font-family: lato, sans-serif, tahoma;
 	padding: 0px;
+
 }
 
 body a{
@@ -25,7 +46,16 @@ body a{
 
 header{
 	display: flex;
+	z-index: 10;
+	background-color: orange;
 }
+
+
+header a{
+	color: white;
+}
+
+
 
 
 .alert{
@@ -55,22 +85,23 @@ header{
 .main-nav{
 	display: flex;
 	flex-wrap: wrap;
+	background-color: #333;
+	color: #eee;
 }
 
 .nav-item{
 	padding: 10px;
 	text-align: center;
 	min-width: 80px;
+	align-content: center;
 }
+
 
 .main-title{
 	padding: 10px;
 	display: flex;
 }
 
-header .active{
-	border-bottom: solid 4px red;
-}
 
 .dropdown{
 	position: relative;
@@ -79,14 +110,25 @@ header .active{
 .dropdown-list{
 	position: absolute;
 	border: solid thin #ccc;
-	background-color: white;
+	background-color: #ccc;
 	margin-top: 10px;
+	display: none;
 }
 
-.hero{
-	height: 500px;
-	object-fit: cover;
+.dropdown:hover .dropdown-list{
+	display: block;
 }
+
+.category-list{
+	display: flex;
+}
+
+.dropdown-list a{
+	text-decoration: none;
+}
+
+
+
 
 .content{
 	padding: 4px 20px;
@@ -94,6 +136,43 @@ header .active{
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
+
+.main_content::after {
+	content: "";
+	display: table;
+	background-color: rgb(39 121 241 / 25%);
+	clear: both;
+}
+
+
+#content2, #content3 {
+	display: none;
+}
+
+
+.home-left {
+	float: left;
+    width: 70%;
+    padding: 20px;
+}
+
+.home-right {
+	float: right;
+    padding: 20px;
+    width: 30%;
+    justify-content: center;
+}
+
+.btn-tab-select {
+	border: 2px solid black;
+	border-radius: 5px;
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; 
+}
+
 
 .music-card img{
 	height: 200px;
@@ -108,8 +187,9 @@ header .active{
 .music-card{
 	width: 200px;
 	margin: 20px;
-	background-color: #eee;
-
+	background-color: #99abb7;
+	border-radius: 5px;
+	color: white;
 }
 
 .card-content{
@@ -120,6 +200,21 @@ header .active{
 	font-size: 18px;
 }
 
+.link-with-background {
+    display: block; /* Cho phép đặt kích thước */
+    width: 200px; /* Kích thước rộng của liên kết */
+    height: 200px; /* Kích thước cao của liên kết */
+    background-size: cover; /* Đảm bảo hình ảnh phủ kín khối */
+    background-position: center; /* Căn giữa hình ảnh */
+    text-decoration: none; /* Bỏ gạch chân văn bản */
+    color: white; /* Màu văn bản */
+    display: flex; /* Sử dụng flexbox để căn giữa văn bản */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    font-size: 20px; /* Kích thước chữ */
+}
+
+
 .card-subtitle{
 	opacity: 0.7;
 }
@@ -129,21 +224,6 @@ header .active{
 	max-width: 25px;
 }
 
-footer a {
-	color: white;
-}
-
-footer{
-	padding: 20px;
-	background-color: #444;
-	display: flex;
-	color: white;
-}
-
-.footer-div{
-	flex: 1;
-	padding: 10px;
-}
 
 .form-control{
 	width: 100%;
@@ -202,7 +282,7 @@ footer{
 }
 
 .admin-content{
-	padding: 20px;
+	padding: 0px;
 	background-color: #fefbed;
 }
 
@@ -211,7 +291,7 @@ footer{
 }
 
 .section-title{
-	margin-left: 20px;
+	margin-left: 7%;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -224,6 +304,9 @@ header .socials{
 .hide{
 	display: none;
 }
+
+
+
 
 .table{
 	width: 100%;
@@ -245,6 +328,111 @@ header .socials{
 
 }
 
+
+tr:hover td{
+	background-color: #555;
+	color: white;
+}
+
+.footer{
+	margin-top: 25px;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pagination.active, .pagination:hover{
+	background: #64549B;
+	color: white;
+}
+
+
+.tab_head_container{
+	margin-bottom: 18px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.page_limit{
+	font-size: 20px;
+}
+
+.page_limit select{
+	font-size: 16px;
+	color: white;
+	padding: 5px;
+	background-color: linear-gradient(to bottom, #9c9c9c 0%, #333 100%);
+}
+
+
+.page_limit option{
+	background: rgb(58, 58, 58);
+}
+
+
+.sortRank{
+	position: relative;
+}
+
+.sort_indication::after{
+	position: absolute;
+	content: '\25b2';
+	font-size: 15px;
+	cursor: pointer;
+	color: var(--up_arrow_color);
+	text-shadow: var(--up_arrow_shadow);
+	right: 5px;
+}
+
+.sort_indication::before{
+	position: absolute;
+	content: '\25b2';
+	font-size: 15px;
+	cursor: pointer;
+	color: var(--down_arrow_color);
+	text-shadow: var(--down_arrow_shadow);
+	right: 5px;
+	margin-top: 14px;
+}
+
+
+
+
+
+
+.tab_filter_text{
+	height: 25px;
+	width: 200px;
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+	padding-left: 10px;
+	border-radius: 5px;
+}
+
+.tab_filter_btn{
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+
+
+.custom-column {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+#part2,
+#part3 {
+    display: none;
+}
+
+
+
 @media (max-width: 768px){
 	header{
 		flex-direction: column;
@@ -256,3 +444,52 @@ header .socials{
 }
 
 
+
+
+
+/* Hiệu ứng hover */
+.list-group-item:hover {
+    background-color: #f5f5f5; /* Đổi màu nền khi di chuột vào */
+    cursor: pointer; /* Thay đổi con trỏ chuột */
+}
+
+
+
+
+
+
+
+
+.music-player{
+	height: 180px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: #f9f9f9;
+	border-radius: 1rem;
+	box-shadow: 0 .5rem 1rem #000;
+	overflow: hidden;
+}
+
+.music-player .image{
+	height: 100%;
+	width: 25%;
+}
+
+.music-player .image img{
+	height: 100%;
+	width: 100%;
+}
+
+.music-player .music{
+	width: 75%;
+}
+
+.music-player .music audio{
+	width: 100%;
+	outline: none;
+}
+
+.music-player .music audio::-webkit-media-controls-enclosure{
+	background: none;
+}

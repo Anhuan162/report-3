@@ -34,7 +34,7 @@
 
 <?php require page('includes/header')?>
 
-	<section class="content">
+	<section class="content" style="min-height: 85%; align-items: center;">
 		
 		<div class="login-holder">
 			<?php if(message()):?>
@@ -44,9 +44,23 @@
 			<form method="post">
 				<center><img src="assets/images/logo.jpg" style="width: 150px; border-radius: 50%; border: solid thin $ccc;">  </center>
 				<h1>Login</h1>
-				<input  value="<?=set_value('email')?>" class="my-1 form-control" type="email" name="email" placeholder="Email">
-				<input  value="<?=set_value('password')?>" class="my-1 form-control" type="password" name="password" placeholder="Password">
-				<button class="my-1 btn bg-blue">Login</button>
+				<div class="mb-3 mt-3">
+					<label for="email">Email:</label>
+					<input  value="<?=set_value('email')?>" class="my-1 form-control" type="email" name="email" placeholder="Email">
+				</div>
+
+				<div class="mb-3">
+					<label for="pwd">Mật khẩu:</label>
+					<input  value="<?=set_value('password')?>" class="my-1 form-control" type="password" name="password" placeholder="Nhập mật khẩu">
+				</div>
+
+			    <div class="form-check mb-3">
+			      <label class="form-check-label">
+			        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+			      </label>
+
+			    </div>
+			    <button class="my-1 btn bg-secondary ">Đăng nhập</button>
 			</form>
 		</div>
 		

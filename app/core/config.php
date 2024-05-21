@@ -2,7 +2,7 @@
 
 if($_SERVER['SERVER_NAME'] == "localhost"){
 
-	// for online server
+	// for local server
 	define("ROOT", "http://localhost/HGMusic/public");
 
 	define("DBDRIVER", "mysql");
@@ -13,7 +13,7 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 
 }
 else{
-	// for local server
+	// for online server
 	define("ROOT", "http://www.mywebsite.com");
 
 	define("DBDRIVER", "mysql");

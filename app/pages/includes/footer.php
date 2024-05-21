@@ -1,43 +1,149 @@
-<footer>
-		<div class="footer-div">
-			<ul>
-				<li><a href="">Home</a></li>
-				<li><a href="">Music</a></li>
-				<li><a href="">About us</a></li>
-				<li><a href="">Contact us</a></li>
+<div class="container-fluid footer bg-dark text-body py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item">
+                    <h4 class="mb-4 text-white">Newsletter</h4>
+                    <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                    <div class="position-relative mx-auto">
+                        <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                        <button type="button" class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4 text-white">Our Services</h4>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Thỏa thuận sử dụng</a>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Chính sách bảo mật</a>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Chính Sách SHTT</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="mb-4 text-white">Volunteer</h4>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Karen Dawson</a>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Jack Simmons</a>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Michael Linden</a>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Simon Green</a>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Natalie Channing</a>
+                    <a href=""><i class="fas fa-angle-right me-2"></i> Caroline Gerwig</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item">
+                    <h4 class="mb-4 text-white">Our Gallery</h4>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                        <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="col-4">
+                            <div class="footer-gallery">
+                                <img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
 
-				<?php if(!logged_in()):?>
-				<li><a href="<?=ROOT?>/login">Login</a></li>
-				<?php endif;?>
-			</ul>
-		</div>
-		<div class="footer-div">
-			<form>
-				<div class="form-group">
-					<input class="form-control" type="text" placeholder="Search for music" name="find">
-					<button class="btn">Search</button>
-				</div>
-			</form>
-		</div>
-		<div class="footer-div">
-			Follow us:
-			<br><br>
-			<svg  width="25" height="25" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
-			  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-			</svg>
-			<svg  width="25" height="25" fill="white" class="bi bi-tiktok" viewBox="0 0 16 16">
-			  <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
-			</svg>
-			<svg  width="25" height="25" fill="white" class="bi bi-instagram" viewBox="0 0 16 16">
-			  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-			</svg>
-		</div>
 
-	</footer>
+<!-- Copyright Start -->
+<div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-md-0">
+                <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="btn-hover-color btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4 text-center text-md-end text-body">
+                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
 
 </body>
 
-<script src="<?=ROOT?>/assets/js/menu-popper.js?35"></script>
+<script src="<?=ROOT?>/assets/js/menu-popper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="<?=ROOT?>/assets/lib/waypoints/waypoints.min.js"></script>
+<script src="<?=ROOT?>/assets/lib/counterup/counterup.min.js"></script>
+<script src="<?=ROOT?>/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+
+
+
+
+<!-- Template Javascript -->
+<script src="<?=ROOT?>/assets/js/main.js"></script>
 
 
 </html>
